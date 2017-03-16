@@ -25,7 +25,6 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
