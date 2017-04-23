@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Gdolim</string>
+    <string name="launcher_name">@string/app_name</string>
+    <string name="activity_name">@string/launcher_name</string>
+    
+    <string name="google_app_id">1:34722650210:android:b2100f4de3ebbc50</string>
+    <string name="google_api_key">AIzaSyAQldsliQRjJgFdWnMto6GywMNJDw7PcXA</string>
+</resources>
