@@ -8,10 +8,10 @@
     },
     "installed_plugins": {
         "cordova-plugin-firebase": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.gdolim.app"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.example.hello"
+            "PACKAGE_NAME": "com.gdolim.app"
         }
     },
     "dependent_plugins": {}
