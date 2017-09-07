@@ -8,6 +8,19 @@ var text = '{"data":[' +
 
 
 
+// Get a reference to the database service
+var database = firebase.database();
+var userId = firebase.auth().currentUser.uid;
+var res = database
+    .ref('/first event/')
+    .once('value')
+    .then(function(snapshot) {
+    var username = snapshot.val() ;
+    // ...
+    });
+console.log('res : ' + res);
+
+
 function drawTable(data) {
     for (var i = 0; i < data.length; i++) {
         drawRow(data[i]);
