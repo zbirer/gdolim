@@ -113,3 +113,73 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+.flex-rows {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex-cols {
+    display: flex;
+    flex-direction: row;
+
+}
+.major {
+    flex: 1 0 auto;
+}
+.main{
+    justify-content: space-between
+}
+.main-img{
+    width: 100vw;
+    height: 92vh;
+}
+.buttons{
+    align-self: flex-end;
+    height: 48px;
+    padding-top: 10px;
+}
+.footer{
+    background-color: rgba(238, 238, 238, 1);
+    background-position: top center;
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: scroll;
+    color: #3e3c90;
+    font-family: 'Open Sans Hebrew', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    text-transform: none;
+    font-style: normal;
+    line-height: 1.5em;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.space{
+    min-width: 10px;
+}
+.my-button{
+    background: linear-gradient(rgb(198, 45, 31) 5%, rgb(242, 68, 55) 100%) rgb(198, 45, 31);
+    border-radius: 18px;
+    border: 1px solid rgb(208, 39, 24);
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    /* font-family: Arial; */
+    font-size: 24px;
+    padding: 9px 30px;
+    text-decoration: none;
+    text-shadow: rgb(129, 14, 5) 0px 1px 0px;
+}
+.next-button{
+    background: linear-gradient(rgb(98, 45, 131) 5%, rgb(42, 68, 155) 100%) rgb(98, 45, 131);
+    border: 1px solid rgb(98, 45, 131);
+}
