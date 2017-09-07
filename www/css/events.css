@@ -1,6 +1,7 @@
 table {
   border: 1px solid #666;
     width: 100%;
+    font-size:70px
 }
 th {
   background: #f8f8f8;
@@ -8,5 +9,53 @@ th {
     padding: 2px;
 }
 td {
-   text-align: right;
+   text-align: right;    border: 6px solid #666;
+}
+
+div.swm_event_box {
+    margin: 0 auto 40px auto;
+        margin-top: 0px;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-left: auto;
+    float: none;
+    text-align: center;
+}
+
+div.swm_evt_date {
+    width: 80px;
+    height: 80px;
+    float: right;
+    margin-left: 4px;
+    margin-right: 0;
+    color: #fff;
+    background: #00a99d;
+}
+
+.swm_evt_date_day, .swm_event_box .swm_evt_date_day {
+    padding-top: 10px;
+}
+.swm_evt_date_day {
+    display: block;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 40px;
+    padding-top: 27px;
+    color: #fff;
+    font-family: 'Open Sans',sans-serif;
+}
+
+.swm_evt_date_month {
+    display: block;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.swm_evt_date_year {
+    opacity: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
 }

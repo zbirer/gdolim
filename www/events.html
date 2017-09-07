@@ -1,14 +1,73 @@
 <html>
+<head>
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, see:
+        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+    Some notes:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+    <meta charset="utf-8">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+    <meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;fmedia-src mediastream;">
+
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Hello World</title>
+</head>
 <body>
-<table id="personDataTable">
-    <tr>
-        <th>תאריך עידכון</th>
-        <th>אירוע</th>
-    </tr>
-</table>
+<div class="column-12 widget-column h1-reset-top">
+    <div class="pb-widget-inner"><h1>לוח אירועים</h1></div>
+</div>
+<div class="column-12 widget-column">
+    <div class="pb-widget-inner">
+        <div class="widget-image align-none">
+            <img src="https://www.gdolim.org.il/wp-content/uploads/2016/09/events.jpg" alt="">
+        </div>
+    </div>
+</div>
+<div class="column-12 widget-column">
+    <div class="pb-widget-inner">
+        <div class="pojo-divider alignnone divider-style-space"
+             style="margin-top:20px;margin-bottom:20px;width:100%">
+            <hr style="border-color:#999999;border-width:1px">
+        </div>
+    </div>
+</div>
+<div class="column-12 widget-column">
+    <div class="pb-widget-inner">
+        <div class="textwidget">
+            <div class="swm_raw swm_latest_events">
+                <div id="eventsContainer"></div>
+        </div>
+    </div>
+</div>
+<div class="column-12 widget-column">
+    <div class="pb-widget-inner">
+        <div class="pojo-button-wrap pojo-button-center"><a class="button size-large"
+                                                            style="background-color:rgba(185,69,132,1);border-color:#b94584;color:#ffffff"
+                                                            href="https://www.gdolim.org.il/events"
+                                                            role="link"> <span
+                class="pojo-button-text">לכל האירועים</span> </a></div>
+    </div>
+</div>
+<div class="column-12 widget-column">
+    <div class="pb-widget-inner">
+        <div class="pojo-divider alignnone divider-style-space"
+             style="margin-top:20px;margin-bottom:20px;width:100%">
+            <hr style="border-color:#999999;border-width:1px">
+        </div>
+    </div>
+</div>
+
 <link rel="stylesheet" type="text/css" href="css/events.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/events.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/events.js"></script>
 
 </body>
 </html>
