@@ -61,22 +61,24 @@
                 <!--daniel - take object and populate event.htm-->
                 window.location="events.html";
             }
+    function gotoRights () {
+        window.location="rights.html";
+    }
 
 			  initFirebase();
-			  
+
 			  getEvents();
 			function getEvents()
 			{
 				console.log("In get Event");
 			}
         </script>
-<div>
-    <img src="img/Gdolim.png" style="width: 100%;">
-    <button onclick="gotoEvents()">ארועים</button>
-</div>
-<div class="footer">
-    <div class="row">
-
+<div class="flex-rows main">
+    <img class="major main-img" src="img/gdolim_main_page.PNG">
+    <div class="flex-cols buttons">
+        <span class="my-button" onclick="gotoEvents()">ארועים</span>
+        <span class="space"></span>
+        <span class="my-button next-button" onclick="gotoRights()">זכויות</span>
     </div>
     <div class="footer">
         <div class="row">
