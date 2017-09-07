@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <!--
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
@@ -40,24 +40,43 @@
     <title>Hello World</title>
 </head>
 <body>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script>
-    function gotoEvents () {
-        <!--getdatafromfirebase-->
-        <!--translate to object-->
-        <!--daniel - take object and populate event.htm-->
-        window.location="events.html";
-    }
-    function gotoRights () {
-        window.location="rights.html";
-    }
+	    var firebase;
+		
+		function initFirebase () {
+			  var config = {
+				apiKey: "AIzaSyAQldsliQRjJgFdWnMto6GywMNJDw7PcXA",
+				authDomain: "gdolim-eafe9.firebaseapp.com",
+				databaseURL: "https://gdolim-eafe9.firebaseio.com/",
+				storageBucket: "gdolim-eafe9.appspot.com"//,
+				//messagingSenderId: "<SENDER_ID>",
+			  };
+			  firebase.initializeApp(config);		
+		}
+		
+            function gotoEvents () {
+                <!--getdatafromfirebase-->
+                <!--translate to object-->
+                <!--daniel - take object and populate event.htm-->
+                window.location="events.html";
+            }
 
-</script>
-<div class="flex-rows main">
-    <img class="major main-img" src="img/gdolim_main_page.PNG">
-    <div class="flex-cols buttons">
-        <span class="my-button" onclick="gotoEvents()">ארועים</span>
-        <span class="space"></span>
-        <span class="my-button next-button" onclick="gotoRights()">זכויות</span>
+			  initFirebase();
+			  
+			  getEvents();
+			function getEvents()
+			{
+				console.log("In get Event");
+			}
+        </script>
+<div>
+    <img src="img/Gdolim.png" style="width: 100%;">
+    <button onclick="gotoEvents()">ארועים</button>
+</div>
+<div class="footer">
+    <div class="row">
+
     </div>
     <div class="footer">
         <div class="row">
