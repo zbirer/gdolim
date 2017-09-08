@@ -68,7 +68,10 @@
     initFirebase();
 
     getEvents();
-	
+
+	//=============================================================================
+	// read file from firebase storage
+	//=============================================================================
 	// https://firebase.google.com/docs/storage/web/download-files
 	function getFile (folder, filename, onOk, onError) {
 		// Create a reference with an initial file path and name
@@ -93,10 +96,40 @@
 		});
 	}
 	
+	//=============================================================================
+	// parse content of events text file and return array of events.
+	//=============================================================================
+	function parseEventsFile(fileContent) {
+		var events = [];
+		var lines = fileContent.split('\n');
+		for (lineIndex in lines) {
+			var curLine = lines[lineIndex];
+			if (!curLine || curLine.length == 0) {
+				continue;
+			}
+			
+			var splittedLineParts = curLine.split(',');
+			var event = {
+				month:       splittedLineParts[0].trim(),
+				day:         splittedLineParts[1].trim(),
+				subject:     splittedLineParts[2].trim(),
+				description: splittedLineParts[3].trim()
+			};
+			
+			events.push(event);
+		};
+		
+		return events;
+	}
+	
+	//=============================================================================
+	// get events information
+	//=============================================================================
     function getEvents()
     {
-		getFile('events', 'events-list.txt', function onOk(content) {
-			console.log(content);
+		getFile('events', 'events-list.txt', function onOk(fileContent) {
+			var events = parseEventsFile(fileContent);
+			console.log(events);
 		}, function onError(error) {
 			console.error(error);
 		})	;
