@@ -51,13 +51,20 @@ function createEventHtml(event){
 // create Dom Events
 //=============================================================================
 function createDomEvents(events){
-    var eventsList = document.getElementById('events_content');
     for(var i=0; i < events.length; i++){
         var ele = document.createElement("div");
         ele.setAttribute("class","event flex-rows");
         ele.innerHTML=createEventHtml(events[i]);
         eventsList.appendChild(ele);
     }
+    eventsList.onscroll = function() {
+        if (eventsList.scrollTop > 500) {
+            document.getElementById("go-top").style.display = "block";
+        } else {
+            document.getElementById("go-top").style.display = "none";
+        }
+
+    };
 };
 
 //=============================================================================
@@ -121,7 +128,12 @@ function parseEventsFile(fileContent) {
 
         events.push(event);
     };
-
+    // for debug
+    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
+    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
+    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
+    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
+    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
     return events;
 }
 
@@ -138,10 +150,23 @@ function initFirebase () {
     firebase.initializeApp(config);
 }
 
+// back Button Clicked.
+//=============================================================================
+function backButtonClicked() {
+    window.location="index.html";
+}
+
+// When the user clicks on the button, scroll to the top of the events content
+function goTop() {
+    eventsList.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 //=============================================================================
 
 var firebase;
 var events;
+var eventsList = document.getElementById('events_content');
 
 initFirebase ();
 

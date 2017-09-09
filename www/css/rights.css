@@ -1,0 +1,16 @@
+.go-back {
+    height:4vh;
+    font-size: 1.5em;
+    display: block;
+    background-color: #4c728a;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 60px;
+}
+.go-back:hover {
+    background-color: #555;
+}
+.rights-content{
+    height: 96vh;
+}
