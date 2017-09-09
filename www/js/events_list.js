@@ -139,8 +139,8 @@ function parseEventsFile(fileContent) {
 
         var splittedLineParts = curLine.split(',');
         var event = {
-            month:       splittedLineParts[0].trim(),
-            day:         splittedLineParts[1].trim(),
+            day:         splittedLineParts[0].trim(),
+            month:       splittedLineParts[1].trim(),
             subject:     splittedLineParts[2].trim(),
             description: splittedLineParts[3].trim()
         };
