@@ -40,102 +40,15 @@
     <title>Hello World</title>
 </head>
 <body>
-<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script>
-    var firebase;
-
-    function initFirebase () {
-        var config = {
-            apiKey: "AIzaSyAQldsliQRjJgFdWnMto6GywMNJDw7PcXA",
-            authDomain: "gdolim-eafe9.firebaseapp.com",
-            databaseURL: "https://gdolim-eafe9.firebaseio.com/",
-            storageBucket: "gdolim-eafe9.appspot.com"//,
-            //messagingSenderId: "<SENDER_ID>",
-        };
-        firebase.initializeApp(config);
-    }
-
     function gotoEvents () {
-        <!--getdatafromfirebase-->
-        <!--translate to object-->
-        <!--daniel - take object and populate event.htm-->
-        window.location="events.html";
+        window.location="events_list.html";
     }
     function gotoRights () {
         window.location="rights.html";
     }
-
-    initFirebase();
-
-    getEvents();
-
-	//=============================================================================
-	// read file from firebase storage
-	//=============================================================================
-	// https://firebase.google.com/docs/storage/web/download-files
-	function getFile (folder, filename, onOk, onError) {
-		// Create a reference with an initial file path and name
-		var storage = firebase.storage();
-		
-		var pathReference = storage.ref(folder); // example: 'images/stars.jpg'
-	
-		pathReference.child(filename).getDownloadURL().then(function(url) { // example filename: 'images/stars.jpg'
-		  // `url` is the download URL for 'images/stars.jpg'
-
-		  // This can be downloaded directly:
-		  var xhr = new XMLHttpRequest();
-		  xhr.responseType = 'text'
-		  xhr.onload = function(event) {
-			var clob = xhr.response;
-			onOk(clob);
-		  };
-		  xhr.open('GET', url);
-		  xhr.send();
-		}).catch(function(error) {
-		  onError(error);
-		});
-	}
-	
-	//=============================================================================
-	// parse content of events text file and return array of events.
-	//=============================================================================
-	function parseEventsFile(fileContent) {
-		var events = [];
-		var lines = fileContent.split('\n');
-		for (lineIndex in lines) {
-			var curLine = lines[lineIndex];
-			if (!curLine || curLine.length == 0) {
-				continue;
-			}
-			
-			var splittedLineParts = curLine.split(',');
-			var event = {
-				month:       splittedLineParts[0].trim(),
-				day:         splittedLineParts[1].trim(),
-				subject:     splittedLineParts[2].trim(),
-				description: splittedLineParts[3].trim()
-			};
-			
-			events.push(event);
-		};
-		
-		return events;
-	}
-	
-	//=============================================================================
-	// get events information
-	//=============================================================================
-    function getEvents()
-    {
-		getFile('events', 'events-list.txt', function onOk(fileContent) {
-			var events = parseEventsFile(fileContent);
-			console.log(events);
-		}, function onError(error) {
-			console.error(error);
-		})	;
-        console.log("In get Event");
-    }
 </script>
+
 <div class="flex-rows main">
     <img class="major main-img" src="img/gdolim_main_page.PNG">
     <div class="flex-cols buttons">
