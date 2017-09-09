@@ -83,11 +83,11 @@ body{
 }
 .event-img{
     width:440px;
-    height: 10vh;
+    height: 150px;
 }
 .event-date{
-    width:140px;
-    height: 10vh;
+    width:150px;
+    height: 150px;
     margin-left: 1vw;
     color:white;
     background-color: #00a99d;
@@ -96,7 +96,7 @@ body{
     border-radius: 5px;
 }
 .event-date-day{
-    font-size: 2.3em;
+    font-size: 2.2em;
 }
 .event-date-month{
    font-size: 1.8em;

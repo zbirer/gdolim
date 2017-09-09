@@ -1,26 +1,3 @@
-/*
-var events =[
-    {
-        day:"15",
-        description:"טיול ראשון לכל המקומות המגיבים",
-        month:"אוגוסט",
-        subject:"טיול לצפון"
-    },
-    {
-        day:"28",
-        description:"כל ההפעות ועוד פרטים בקישור",
-        month:"ספטמבר",
-        subject:"טיול לקוסטה ריקה"
-    },
-    {
-        day:"8",
-        description:"ערב הוקרה לפעילי העמותה כולל ארוחת ערב ואומן אורח, הערב יוקדש לגיוס מתנדבים נוספים, ההזמנה זוגית",
-        month:"אוקטובר",
-        subject:"ערב הוקרה לפעילי העמותה"
-    }
-];
-*/
-
 //=============================================================================
 // create Event Html
 //=============================================================================
@@ -77,7 +54,6 @@ function createDomEvents(events){
     var eventsList = document.getElementById('events_content');
     for(var i=0; i < events.length; i++){
         var ele = document.createElement("div");
-        //ele.setAttribute("id","timedrpact"+i);
         ele.setAttribute("class","event flex-rows");
         ele.innerHTML=createEventHtml(events[i]);
         eventsList.appendChild(ele);
@@ -87,8 +63,7 @@ function createDomEvents(events){
 //=============================================================================
 // get events information
 //=============================================================================
-function getEvents()
-{
+function getEvents(){
     getFile('events', 'events-list.txt', function onOk(fileContent) {
         events = parseEventsFile(fileContent);
         createDomEvents(events);
@@ -98,7 +73,6 @@ function getEvents()
     })	;
 }
 
-//=============================================================================
 // read file from firebase storage
 //=============================================================================
 // https://firebase.google.com/docs/storage/web/download-files
@@ -150,8 +124,9 @@ function parseEventsFile(fileContent) {
 
     return events;
 }
-var firebase;
-var events;
+
+// init Firebase.
+//=============================================================================
 function initFirebase () {
     var config = {
         apiKey: "AIzaSyAQldsliQRjJgFdWnMto6GywMNJDw7PcXA",
@@ -162,6 +137,11 @@ function initFirebase () {
     };
     firebase.initializeApp(config);
 }
+
+//=============================================================================
+
+var firebase;
+var events;
 
 initFirebase ();
 
