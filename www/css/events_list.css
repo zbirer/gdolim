@@ -216,3 +216,17 @@ i {
     justify-content: flex-end;
     padding: 10px 15px;
 }
+.pojo-button-wrap.pojo-button-center {
+    display: block;
+    text-align: center;
+}
+.button.size-large {
+    font-size: 3.2em;
+    line-height: 3.5;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'Open Sans Hebrew', Arial, sans-serif;
+    padding: 30px 70px;
+    text-decoration: none;
+}
