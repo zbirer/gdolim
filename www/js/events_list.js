@@ -8,7 +8,7 @@ function createEventHtml(event){
     '<div class="flex-cols event-img-date">'+
         '<div class="flex-3">'+
             '<img class="event-img"'+
-                'src="https://www.gdolim.org.il/wp-content/uploads/2017/01/nofesh_mishpachot_2017a-166x80.jpg" '+
+                'src="'+ event.img_url +'" '+
                 'class="attachment-tribe_events size-tribe_events wp-post-image" '+
                 'alt="" >'+
         '</div>'+
@@ -20,7 +20,7 @@ function createEventHtml(event){
     '<div class="flex-rows event-details-container border-right border-left border-bottom">'+
         '<div class="flex-rows event-img-details border-top">'+
             '<div class="event-link1">'+
-                '<a href="https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/" '+
+                '<a href="'+ event.subject_url +'" '+
                     'title="" '+
                     'role="link">'+
                     event.subject+
@@ -31,7 +31,7 @@ function createEventHtml(event){
                     event.description +
                 '</div>'+
                 '<div class="event-link2">'+
-                    '<a href="https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/"'+
+                    '<a href="'+ event.more_details_url +'"'+
                         'title=""'+
                         'role="link">'+
                         ' עוד פרטים> '+
@@ -40,7 +40,7 @@ function createEventHtml(event){
             '</div>'+
         '</div>'+
         '<div class="flex-cols event-location">'+
-            '<div>אילת</div>'+
+            '<div>'+ event.location +'</div>'+
             '<div class="event-location-icon fa fa-map-marker"></div>'+
         '</div>'+
     '</div>';
@@ -108,32 +108,44 @@ function getFile (folder, filename, onOk, onError) {
 
 //=============================================================================
 // parse content of events text file and return array of events.
+// example of file content:
+/*
+ [
+ {
+ "day": "15",
+ "description": "נופש המאפשר הפוגה משגרת החיים",
+ "img_url": "https://www.gdolim.org.il/wp-content/uploads/2017/01/nofesh_mishpachot_2017a-166x80.jpg",
+ "location": "אילת",
+ "month": "יול",
+ "more_details_url": "https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/",
+ "subject": "נופש החלמה למשפחות באילת",
+ "subject_url": "https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/"
+ },
+ {
+ "day": "09",
+ "description": "נופש המאפשר הפוגה משגרת החיים",
+ "img_url": "https://www.gdolim.org.il/wp-content/uploads/2017/09/gdolim_dor_20161018_5_small-1-166x80.jpg",
+ "location": "אילת",
+ "month": "אוק",
+ "more_details_url": "https://www.gdolim.org.il/event/%d7%94%d7%a4%d7%a0%d7%99%d7%a0%d7%92-%d7%a1%d7%95%d7%9b%d7%95%d7%aa-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa/",
+ "subject": "הפנינג סוכות למשפחות",
+ "subject_url": "https://www.gdolim.org.il/event/%d7%94%d7%a4%d7%a0%d7%99%d7%a0%d7%92-%d7%a1%d7%95%d7%9b%d7%95%d7%aa-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa/"
+ },
+ {
+ "day": "15",
+ "description": "נופש המאפשר הפוגה משגרת החיים",
+ "img_url": "https://www.gdolim.org.il/wp-content/uploads/2017/01/nofesh_mishpachot_2017a-166x80.jpg",
+ "location": "אילת",
+ "month": "יול",
+ "more_details_url": "https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/",
+ "subject": "נופש החלמה למשפחות באילת",
+ "subject_url": "https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/"
+ }
+ ]
+ */
 //=============================================================================
 function parseEventsFile(fileContent) {
-    events = [];
-    var lines = fileContent.split('\n');
-    for (lineIndex in lines) {
-        var curLine = lines[lineIndex];
-        if (!curLine || curLine.length == 0) {
-            continue;
-        }
-
-        var splittedLineParts = curLine.split(',');
-        var event = {
-            day:         splittedLineParts[0].trim(),
-            month:       splittedLineParts[1].trim(),
-            subject:     splittedLineParts[2].trim(),
-            description: splittedLineParts[3].trim()
-        };
-
-        events.push(event);
-    };
-    // for debug
-    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
-    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
-    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
-    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
-    events.push({day: 12,month:'ינואר',subject: 'xhdkdkasd',description: 'cc jcja cjac cnjnd jdkdjd cjjc kjc cjkjskdj'});
+    var events = JSON.parse(fileContent);
     return events;
 }
 
