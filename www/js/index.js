@@ -41,8 +41,6 @@ var app = {
 
         console.log('Received Event: ' + id);
     }
-
-    get
 };
 
 app.initialize();
