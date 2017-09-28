@@ -124,6 +124,8 @@ h1 {
 .main-img{
     width: 100vw;
     height: 86vh;
+	margin-bottom: 9px;
+	margin-top: -30px;
 }
 
 /* ========  Footer ==============*/
