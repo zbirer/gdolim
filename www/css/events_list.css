@@ -54,22 +54,9 @@ i {
 .back-button{
     color:blue;
 }
-.go-back {
-    font-size: 0.5em;
-    border: none;
-    outline: none;
-    background-color: #00a99d;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 60px;
-}
-.go-back:hover {
-    background-color: #555;
-}
 .events-content-title{
-    font-size: 3.5em;
-    justify-content: space-between;
+    font-size: 50px;
+    justify-content: flex-end;
     width: 94vw;
 }
 .events-content-img{
@@ -79,18 +66,19 @@ i {
  }
 .events-content{
     width:100vw;
-    height: 81vh;
+    height: 80%;
     display: flex;
     align-items: center;
     background-color: white;
 }
-.events-content-container{
-    max-height: 77vh;
+.events-content-container {
+    max-height: 70%;
     width: 94vw;
     justify-content: center;
     background-color: white;
     flex-flow: row wrap;
     overflow-y: auto;
+    margin: 10px 0 25px 0;
 }
 .event{
     width: 600px;
@@ -99,10 +87,10 @@ i {
     align-items: center;
     font-family: Arial, sans-serif;
     font-weight: normal;
-    font-size: 2em;
+    font-size: 26px;
     text-transform: none;
     font-style: normal;
-    line-height: 1.5em;
+    line-height: 26px;
     padding: 35px;
 }
 .event-img-date{
@@ -123,10 +111,10 @@ i {
     border-radius: 5px;
 }
 .event-date-day{
-    font-size: 2.2em;
+    font-size: 50px;
 }
 .event-date-month{
-   font-size: 1.8em;
+   font-size: 40px;
 }
 .event-img-details{
     direction: rtl;
@@ -136,7 +124,7 @@ i {
 }
 .event-link1{
     align-self: center;
-    line-height: 2em;
+    line-height: 36px;
     font-weight: bold;
 }
 .event-link1 a{
@@ -145,7 +133,7 @@ i {
 }
 .event-link2{
     align-self: center;
-    line-height: 2em;
+    line-height: 36px;
 }
 .event-link2 a{
     text-decoration: none;
@@ -161,21 +149,21 @@ i {
     max-width: 580px;
 }
 .event-location{
-    line-height: 2em;
+    line-height: 36px;
     justify-content: center;
 }
 .event-location-icon{
-    font-size: 1em !important;
+    font-size: 14px !important;
     color: #999;
     align-self: center;
     padding-left: 10px;
 }
 .go-top {
-    font-size: 2em;
+    font-size: 20px;
     min-width: 120px;
     display: none;
     position: fixed;
-    bottom: 10vh;
+    bottom: 18%;
     right: 45px;
     z-index: 99;
     border: none;
@@ -192,17 +180,16 @@ i {
 /* ========  Footer ==============*/
 .events-footer{
     width: 100vw;
-    height: 8vh;
     display: flex;
     justify-content: flex-end;
     color: #3e3c90;
     text-align: right;
     font-family: Arial, sans-serif;
     font-weight: normal;
-    font-size: 1.8em;
+    font-size: 18px;
     text-transform: none;
     font-style: normal;
-    line-height: 1.5em;
+    line-height: 36px;
 }
 .events-footer-logo{
 }
@@ -221,8 +208,8 @@ i {
     text-align: center;
 }
 .button.size-large {
-    font-size: 3.2em;
-    line-height: 3.5;
+    font-size: 30px;
+    line-height: 36px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;

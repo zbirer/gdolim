@@ -162,12 +162,6 @@ function initFirebase () {
     firebase.initializeApp(config);
 }
 
-// back Button Clicked.
-//=============================================================================
-function backButtonClicked() {
-    window.location="index.html";
-}
-
 // When the user clicks on the button, scroll to the top of the events content
 function goTop() {
     eventsList.scrollTop = 0;
