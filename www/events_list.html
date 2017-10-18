@@ -6,35 +6,33 @@
 </head>
 <body>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<!--
     <div class="events-header">
         <img class="events-header-img" src="img/gdolim_header.png">
     </div>
-    <div class="events-content flex-rows">
-        <div class="flex-cols events-content-title">לוח אירועים</div>
-        <img class="events-content-img" src="img/events-header.jpg">
+	-->
+    <div class="events-content">
+
+		<!-- ============ -->
+		<!-- please wait  -->
+		<!-- ============ -->
+		<div id="please-wait" class="please-wait-title">
+		אנא המתן
+		</div>
+		
+		<!-- ============ -->
+		<!-- events data  -->
+		<!-- ============ -->
         <div id="events_content"
              class="events-content-container flex-cols">
-            <button  id="go-top" class="go-top" onclick="goTop()" title="Go to top">למעלה</button>
+            <!--<button id="go-top" class="go-top" onclick="goTop()" title="Go to top">למעלה</button>-->
         </div>
-        <div class="pojo-button-wrap pojo-button-center">
+		
+        <div id="to-all-events" class="pojo-button-wrap pojo-button-center">
             <a class="button size-large" style="background-color:rgba(185,69,132,1);border-color:#b94584;color:#ffffff" href="https://www.gdolim.org.il/events" role="link">
                 <span class="pojo-button-text">לכל האירועים</span>
             </a>
         </div>
-    </div>
-    <div class="events-footer flex-cols">
-        <div class="events-footer-details">
-            <div><strong>טלפון:</strong> 036195977 </div>
-            <div>
-                <strong>דוא"ל:</strong>
-                <a href="mailto:gdolim1@gdolim.org.il" role="link">gdolim1@gdolim.org.il</a>
-            </div>
-            <div><strong>כתובת:</strong> ת.ד 815 גבעתיים, מיקוד 5310801 </div>
-        </div>
-        <div class="events-footer-logo">
-            <img class="events-footer-logo-img" src="img/logo_one_color_footer.png">
-        </div>
-
     </div>
     <script src="js/events_list.js"></script>
 </body>

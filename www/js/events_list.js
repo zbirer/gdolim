@@ -57,24 +57,32 @@ function createDomEvents(events){
         ele.innerHTML=createEventHtml(events[i]);
         eventsList.appendChild(ele);
     }
+	
+	document.getElementById("to-all-events").style.display = "block";
+	document.getElementById("please-wait").style.visibility = "hidden";
+
+	/*
     eventsList.onscroll = function() {
         if (eventsList.scrollTop > 500) {
             document.getElementById("go-top").style.display = "block";
         } else {
             document.getElementById("go-top").style.display = "none";
         }
-
     };
+	*/
 };
 
 //=============================================================================
 // get events information
 //=============================================================================
 function getEvents(){
+	document.getElementById("to-all-events").style.display = "none";
+	document.getElementById("please-wait").style.visibility = "visible";
+
     getFile('events', 'events-list.txt', function onOk(fileContent) {
         events = parseEventsFile(fileContent);
         createDomEvents(events);
-        console.log(events);
+        console.log('Events: ',events);
     }, function onError(error) {
         console.error(error);
     })	;
