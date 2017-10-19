@@ -65,7 +65,7 @@ function createEventHtml(event){
 function createDomEvents(events){
     for(var i=0; i < events.length; i++){
         var ele = document.createElement("div");
-        ele.setAttribute("class","event flex-rows");
+//        ele.setAttribute("class","event flex-rows");
         ele.innerHTML=createEventHtml(events[i]);
         eventsList.appendChild(ele);
     }
