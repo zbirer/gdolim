@@ -70,12 +70,6 @@ div.swm_evt_date {
     line-height: 28px;
 }
 /* ========  General ==============*/
-body{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: #e5e5e5;
-}
 .border{
     border: 1px solid #999;
 }
@@ -135,7 +129,7 @@ i {
 .events-content{
 	display: block;
     width:100vw;
-    height: 80%;
+    height: 100%;
     align-items: center;
     background-color: white;
 }

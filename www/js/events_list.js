@@ -37,6 +37,12 @@ function createEventHtml(event){
      '<div class="event">'+
      '<div class="swm_event_box">' +
      '<div class="swm_evt_date"><span class="swm_evt_date_day">'+ event.day+'</span> <span class="swm_evt_date_month">'+event.month+'</span><span class="swm_evt_date_year">'+2017+'</span></div>' +
+//     '<div class="swm_evt_title">'+
+//                 '<img class="event-img"'+
+//                     'src="'+ event.img_url +'" '+
+//                     'class="attachment-tribe_events size-tribe_events wp-post-image" '+
+//                     'alt="" >'+
+//             '</div>'+
      '<div class="swm_evt_title"><a href='+event.subject_url+' title="" role="link">'+ event.subject +'</a></div><div class="swm_evt_desc"><p>'+event.description+'</p>'+
      '<div class="event-location"><span>'+event.location+'</span>'+
                  '<span class="event-location-icon fa fa-map-marker"></span>'+
