@@ -1,10 +1,20 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/rights.css">
  </head>
 
+
+<script type="text/javascript">
+  function frameload(){
+   document.getElementById("please-wait").style.display = "none";
+  }
+</script>
 <body>
-<iframe src="http://www.kolzchut.org.il/he/%D7%97%D7%95%D7%9C%D7%99_%D7%A1%D7%A8%D7%98%D7%9F"
+<div id="please-wait" class="please-wait-title">
+    אנא המתן
+</div>
+<iframe onload="frameload()" src="http://www.kolzchut.org.il/he/%D7%97%D7%95%D7%9C%D7%99_%D7%A1%D7%A8%D7%98%D7%9F"
         style="height: 100%;width:100%;margin:0">
 </iframe>
 </body>

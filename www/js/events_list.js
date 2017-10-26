@@ -5,33 +5,6 @@ function createEventHtml(event){
     if(event.month.length > 3)
         event.month = event.month.substr(0,3);
 
-//     var date = parseDate(rowData.date);
-
-
-//day
-//:
-//"15"
-//description
-//:
-//"נופש המאפשר הפוגה משגרת החיים"
-//img_url
-//:
-//"https://www.gdolim.org.il/wp-content/uploads/2017/01/nofesh_mishpachot_2017a-166x80.jpg"
-//location
-//:
-//"אילת"
-//month
-//:
-//"יול"
-//more_details_url
-//:
-//"https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/"
-//subject
-//:
-//"נופש החלמה למשפחות באילת"
-//subject_url
-//:
-//"https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/"
 
      var eventHtml = '' +
      '<div class="event">'+
@@ -49,52 +22,6 @@ function createEventHtml(event){
              '</div>';+
       '<div>';
 
-//     '<p class="recent_events_read_more_link"><a href="https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/" target="_self" role="link">עוד פרטים <i class="fa fa-angle-right"></i></a></p></div><div class="swm_evt_meta_venue"> <i class="fa fa-map-marker"></i><span class="adr"><span class="locality">אילת</span><span class="delimiter">,</span><span class="country-name">Israel<span class="seperator">.</span></span></span></div>';
-  //
-//        var row = $('<div class="swm_event_box">')
-//        $("#eventsContainer").append(row); //this will append tr element to table... keep its reference for a while since we will add cels into it
-//        row.append($('<div class="swm_evt_date"><span class="swm_evt_date_day">'+ date.day+'</span> <span class="swm_evt_date_month">'+date.month+'</span><span class="swm_evt_date_year">'+date.year+'</span></div>'));
-//        row.append($('<div class="swm_evt_title"><a href='+rowData.details+' title="" role="link">'+ rowData.event +'</a></div><div class="swm_evt_desc"><p>נופש המאפשר הפוגה משגרת החיים, ממנוחה בין הטיפולים ומזמן איכות לחיזוק המשפחה.</p><p class="recent_events_read_more_link"><a href="https://www.gdolim.org.il/event/%d7%a0%d7%95%d7%a4%d7%a9-%d7%94%d7%97%d7%9c%d7%9e%d7%94-%d7%9c%d7%9e%d7%a9%d7%a4%d7%97%d7%95%d7%aa-%d7%91%d7%90%d7%99%d7%9c%d7%aa-4/" target="_self" role="link">עוד פרטים <i class="fa fa-angle-right"></i></a></p></div><div class="swm_evt_meta_venue"> <i class="fa fa-map-marker"></i><span class="adr"><span class="locality">אילת</span><span class="delimiter">,</span><span class="country-name">Israel<span class="seperator">.</span></span></span></div>'))
-//    var eventHtml = '' +
-//    '<div class="event-img-date">'+
-//        '<div class="event-img">'+
-//            '<img class="event-img"'+
-//                'src="'+ event.img_url +'" '+
-//                'class="attachment-tribe_events size-tribe_events wp-post-image" '+
-//                'alt="" >'+
-//        '</div>'+
-//        '<div class="event-date">'+
-//            '<div class="event-date-day">'+event.day+'</div>'+
-//            '<div class="event-date-month">'+event.month+'</div>'+
-//        '</div>'+
-//    '</div>'+
-//    '<div class="event-details-container border-right border-left border-bottom">'+
-//        '<div class="event-img-details border-top">'+
-//            '<div class="event-link1">'+
-//                '<a href="'+ event.subject_url +'" '+
-//                    'title="" '+
-//                    'role="link">'+
-//                    event.subject+
-//                '</a>'+
-//            '</div>'+
-//            '<div class="event-details border-top border-bottom">'+
-//                '<div class="event-details">'+
-//                    event.description +
-//                '</div>'+
-//                '<div class="event-link2">'+
-//                    '<a href="'+ event.more_details_url +'"'+
-//                        'title=""'+
-//                        'role="link">'+
-//                        ' עוד פרטים> '+
-//                    '</a>'+
-//                '</div>'+
-//            '</div>'+
-//        '</div>'+
-//        '<div class="event-location">'+
-//            '<div>'+ event.location +'</div>'+
-//            '<div class="event-location-icon fa fa-map-marker"></div>'+
-//        '</div>'+
-//    '</div>';
     return eventHtml;
 }
 
