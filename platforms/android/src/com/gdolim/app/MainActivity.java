@@ -20,9 +20,7 @@
 package com.gdolim.app;
 
 import android.os.Bundle;
-
 import com.google.firebase.messaging.FirebaseMessaging;
-
 import org.apache.cordova.*;
 
 public class MainActivity extends CordovaActivity
